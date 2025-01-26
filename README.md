@@ -1,6 +1,6 @@
 Дигель Дмитрий
 
-__APPLEWORLD__ 
+__Онлайн магазиг техники Apple AppleWorld__ 
 
 Разработка веб-приложения на Python;
 It-Academy;
