@@ -1,5 +1,7 @@
 Дигель Дмитрий
 
+__APPLEWORLD__ 
+
 Разработка веб-приложения на Python;
 It-Academy;
 Python 3.12.7;
