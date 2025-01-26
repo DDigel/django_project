@@ -14,14 +14,14 @@ __ДИСКЛЕЙМЕР: Вся информация и медиафайлы ис
 
 Начну с админ-панели, где мы логинимся под суперпользователем admin, тут я настроил каждый продукт, присвоил ему категорию, описание, фото для отображения на своём веб-сайте
 
-*Админка1*
+![Image alt](https://github.com/DDigel/django_project/blob/project_branch/for%20readme/admpannel2.jpg)
 
 ![Image alt](https://github.com/DDigel/django_project/blob/project_branch/for%20readme/admpannel1.jpg)
 
 Далее переходим на главную страницу сайта, нас встречает вот такой короткий ролик и в принципе больше здесь никакой информации на главной странице нет
 В навигационной панели видим вкладки с названиями разделов Справа название магазина "AppleWorld" при нажатии на него нас переадресовывают на главную страницу, слева - "Весь каталог", "Iphone", "Watch", "Airpods", "Корзина" и "Профиль"
 
-*Тут должна быть гифка*
+![Image alt](https://github.com/DDigel/django_project/blob/project_branch/for%20readme/gif-for-readme.gif)
 
 *Скрин навбара*
 
