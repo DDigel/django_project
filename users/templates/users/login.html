@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+         body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+
+        .card {
+             border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+         .card-body {
+             padding: 20px;
+          }
+
+
+        .nav-link {
+            color: #FFFFFF !important;
+        }
+
+        .nav-link:hover {
+            color: #e0c4c7 !important;
+        }
+
+        .vh-100 {
+            height: 85vh !important;
+        }
+        .container {
+            padding: 15px;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <!-- Навигация -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Apple World</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="/products/">Весь каталог</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'products:category_list' category_id='smartphone' %}">Iphone</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'products:category_list' category_id='watch' %}">Watch</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'products:category_list' category_id='headphones' %}">Airpods</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'products:view_cart' %}">Корзина({{request.session.total_items|default:0 }})</a></li>
+                    {% if user.is_authenticated %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            {{ user.username }}
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{% url 'users:profile' %}">Профиль</a></li>
+                            <li><a class="dropdown-item" href="{% url 'users:logout' %}">Выйти</a></li>
+                        </ul>
+                    </li>
+                    {% else %}
+                    <li class="nav-item"><a class="nav-link" href="{% url 'users:login' %}">Профиль</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        <div class="card p-4 shadow-sm" style="width: 400px;">
+            <div class="card-body">
+                <h2 class="text-center mb-4">Вход</h2>
+                <form method="post" action="{% url 'users:login' %}">
+                    {% csrf_token %}
+                    {% if form.non_field_errors %}
+                        <div class="alert alert-danger">
+                            {{ form.non_field_errors }}
+                        </div>
+                    {% endif %}
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Имя пользователя</label>
+                        <input type="text" class="form-control" id="username" name="username"
+                               placeholder="Введите имя пользователя" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Пароль</label>
+                        <input type="password" class="form-control" id="password" name="password"
+                               placeholder="Введите пароль" required>
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="remember_me" name="remember_me">
+                        <label class="form-check-label" for="remember_me">Запомнить меня</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Войти</button>
+                </form>
+                <div class="text-center mt-3">
+                    <p>Нет аккаунта? <a href="{% url 'users:register' %}">Зарегистрироваться</a></p>
+                    <p><a href="{% url 'users:password_reset' %}">Забыли пароль?</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
