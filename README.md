@@ -1,12 +1,13 @@
 Дигель Дмитрий
-Разработка веб-приложения на Python
-It-Academy
-Python 3.12.7
-Фреймворк Django 5.1.4
+
+Разработка веб-приложения на Python;
+It-Academy;
+Python 3.12.7;
+Фреймворк Django 5.1.4;
 
 Контакты для связи:
-Telegram - @onehonest (https://t.me/onehonest)
-Inst - @1_honest
+Telegram - @onehonest (https://t.me/onehonest);
+Inst - @1_honest.
 
 На финальный проект для окончания курса, я решил сделать простенький магазин техники apple с названием AppleWorld, используя фреймворк django,
 также использовались html, css для разметки и bootstrap https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css для более эстетичного вида приложения
