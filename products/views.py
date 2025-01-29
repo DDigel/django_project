@@ -145,15 +145,17 @@ def payment(request):
         card_number = request.POST.get('card_number')
         expiry_date = request.POST.get('expiry_date')
         cvv = request.POST.get('cvv')
-
+        
         # Логика обработки платежа (например, проверка данных карты)
-        # Для демонстрации просто выводим данные
         print(f'Card Number: {card_number}, Expiry: {expiry_date}, CVV: {cvv}')
-
-        # Если оплата успешна, возвращаем успешный ответ
-        return JsonResponse({'status': 'success'})
-
-    return render(request, 'products/payment.html')
+        
+        # Если оплата успешна, сохраняем сообщение в сессии
+        request.session['payment_message'] = 'Оплата прошла успешно!'
+        return redirect('products:payment')  # Перенаправляем на страницу оплаты
+    
+    # Получаем сообщение из сессии
+    message = request.session.pop('payment_message', None)
+    return render(request, 'products/payment.html', {'message': message})
 
 # Просмотр корзины
 def cart(request):
