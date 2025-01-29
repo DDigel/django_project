@@ -63,7 +63,7 @@ Airpods у нас показывает страницу со всеми науш
 
 ![Image alt](https://github.com/DDigel/django_project/blob/project_branch/for%20readme/registration.jpg)
 
-Если авторизоваться, то можено указать некоторые данные для пользователя
+Если авторизоваться, то можно указать некоторые данные для пользователя
 
 ![Image alt](https://github.com/DDigel/django_project/blob/project_branch/for%20readme/profile.jpg)
 
@@ -74,13 +74,16 @@ Airpods у нас показывает страницу со всеми науш
 1. Клонируйте репозиторий:
 
 git clone https://github.com/DDigel/django_project.git
+
 cd django_project
 
 2. Создайте виртуальное окружение:
 
 python -m venv venv
-source venv/bin/activate  # Для Linux/Mac
-venv\Scripts\activate     # Для Windows
+
+source venv/bin/activate  #Для Linux/Mac
+
+venv\Scripts\activate     #Для Windows
 
 3. Установите зависимости:
 
