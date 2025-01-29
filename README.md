@@ -73,31 +73,32 @@ Airpods у нас показывает страницу со всеми науш
 
 1. Клонируйте репозиторий:
 
-git clone https://github.com/DDigel/django_project.git
+```git clone https://github.com/DDigel/django_project.git```
 
-cd django_project
+```cd django_project```
 
 2. Создайте виртуальное окружение:
 
-python -m venv venv
+```python -m venv venv```
 
-source venv/bin/activate  #Для Linux/Mac
+```source venv/bin/activate  #Для Linux/Mac```
 
-venv\Scripts\activate     #Для Windows
+```venv\Scripts\activate     #Для Windows```
 
 3. Установите зависимости:
 
-pip install -r requirements.txt
+```pip install -r requirements.txt```
 
 4. Примените миграции:
 
-python manage.py migrate
+```python manage.py migrate```
 
 5. Создайте суперпользователя:
 
-python manage.py createsuperuser
+```python manage.py createsuperuser```
 
 6. Запустите сервер:
 
-python manage.py runserver
+```python manage.py runserver```
+
 Перейди в браузере по адресу: http://127.0.0.1:8000/.
