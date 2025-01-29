@@ -73,9 +73,9 @@ Airpods у нас показывает страницу со всеми науш
 
 1. Клонируйте репозиторий:
 
-git clone https://github.com/DDigel/django_project.git
+```git clone https://github.com/DDigel/django_project.git```
 
-cd django_project
+```cd django_project```
 
 2. Создайте виртуальное окружение:
 
