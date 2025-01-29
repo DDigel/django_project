@@ -67,5 +67,34 @@ Airpods у нас показывает страницу со всеми науш
 
 ![Image alt](https://github.com/DDigel/django_project/blob/project_branch/for%20readme/profile.jpg)
 
-Вот сообственно и всё! Такой краткий обзор на веб-приложение
-В качестве доп инструментов использовался ChatGPT, Gemini Google Ai :)
+Вот сообственно и всё! Такой краткий обзор небольшое на веб-приложение
+
+**Инструкция как сохранить и запустить проект у себя, все команды нужно прописывать в терминале**
+
+1. Клонируйте репозиторий:
+
+git clone https://github.com/DDigel/django_project.git
+cd django_project
+
+2. Создайте виртуальное окружение:
+
+python -m venv venv
+source venv/bin/activate  # Для Linux/Mac
+venv\Scripts\activate     # Для Windows
+
+3. Установите зависимости:
+
+pip install -r requirements.txt
+
+4. Примените миграции:
+
+python manage.py migrate
+
+5. Создайте суперпользователя:
+
+python manage.py createsuperuser
+
+6. Запустите сервер:
+
+python manage.py runserver
+Перейди в браузере по адресу: http://127.0.0.1:8000/.
