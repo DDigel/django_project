@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.views import LoginView
+from django.core.exceptions import ValidationError
 # Create your models here.
 
 class Category(models.Model):
@@ -24,6 +25,11 @@ class Product(models.Model):
     image = models.ImageField(upload_to = 'products/', verbose_name = 'Изображение товара', blank = True, null = True)
     created_at = models.DateTimeField(auto_now_add = True, verbose_name = 'Дата добавления')
     updated_at = models.DateTimeField(auto_now = True, verbose_name = 'Дата обновления')
+
+    def clean(self):
+        """Проверка валидности данных перед сохранением"""
+        if self.price < 0:
+            raise ValidationError({'price': 'Цена не может быть отрицательной.'})
 
     def __str__(self):
         return self.name   
