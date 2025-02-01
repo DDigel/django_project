@@ -18,7 +18,6 @@
         .bg_dark {
             background-color: #212529;
         }
-
     </style>
 </head>
 
@@ -51,11 +50,11 @@
             <form method="post" action="{% url 'products:checkout' %}">
                 {% csrf_token %}
                 <div class="form-group">
-                    <label for="full_name">ФИО</label>
+                    <label for="full_name">ФИО:</label>
                     <input type="text" class="form-control" id="full_name" name="full_name" required>
                 </div>
                 <div class="form-group">
-                    <label for="email">Email</label>
+                    <label for="email">Email:</label>
                     <input type="email" class="form-control" id="email" name="email" required>
                 </div>
                 <div class="mb-3">
@@ -69,12 +68,18 @@
                     {% endif %}
                 </div>
                 <div class="form-group">
-                    <label for="address">Адрес доставки</label>
+                    <label for="address">Адрес доставки:</label>
                     <textarea class="form-control" id="address" name="address" rows="3" required></textarea>
+                </div>
+                <!-- Новое поле для комментария -->
+                <div class="form-group">
+                    <label for="comment">Комментарий к заказу:</label>
+                    <textarea class="form-control" id="comment" name="comment" rows="3"
+                        placeholder="Введите комментарий"></textarea>
                 </div>
                 <!-- Чекбоксы выбора оплаты -->
                 <div class="form-group">
-                    <label>Способ оплаты</label>
+                    <label>Способ оплаты:</label>
                     <div>
                         <input type="radio" id="payment_on_delivery" name="payment_method" value="on_delivery" required>
                         <label for="payment_on_delivery">При получении</label>
@@ -84,20 +89,19 @@
                         <label for="payment_online">Оплата на сайте</label>
                     </div>
                 </div>
-
                 <!-- Поля для онлайн-оплаты -->
                 <div id="online-payment-fields" style="display: none;">
                     <div class="form-group">
-                        <label for="card_number">Номер карты</label>
+                        <label for="card_number">Номер карты:</label>
                         <input type="text" class="form-control" id="card_number" name="card_number"
                             placeholder="Введите номер карты">
                     </div>
                     <div class="form-group">
-                        <label for="expiry_date">Срок действия</label>
+                        <label for="expiry_date">Срок действия:</label>
                         <input type="text" class="form-control" id="expiry_date" name="expiry_date" placeholder="MM/YY">
                     </div>
                     <div class="form-group">
-                        <label for="cvv">CVV</label>
+                        <label for="cvv">CVV:</label>
                         <input type="text" class="form-control" id="cvv" name="cvv" placeholder="CVV">
                     </div>
                 </div>
